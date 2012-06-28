@@ -1,0 +1,12 @@
+The initial bundle for the game project is online.
+
+**Please use the following instructions to work on the project:**
+
+	1- Clone the project
+	2- Edit the file parameters.ini.dist to parameters.ini and configure your database if you want.
+	3- The project bundle is Game/GuessNumberBundle bundle. Please work in this bundle.
+	4- Initially the project has a main controller, form.html.twig and main.html.twig view files.
+	5- The main controller has two test functions and the routing is already configured for them.
+
+**Please before you push anything to the repository read How to Create and store a Symfony2 Project in git documentation.**
+

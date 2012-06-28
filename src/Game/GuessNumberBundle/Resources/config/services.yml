@@ -1,0 +1,7 @@
+parameters:
+#    game_guess_number.example.class: Game\GuessNumberBundle\Example
+
+services:
+#    game_guess_number.example:
+#        class: %game_guess_number.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

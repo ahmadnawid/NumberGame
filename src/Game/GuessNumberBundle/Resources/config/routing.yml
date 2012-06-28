@@ -1,0 +1,11 @@
+GameGuessNumberBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: GameGuessNumberBundle:Default:index }
+
+test:
+    pattern:  /number/{number}
+    defaults: { _controller: GameGuessNumberBundle:Main:index }
+
+form:
+    pattern:  /form
+    defaults: { _controller: GameGuessNumberBundle:Main:form }  

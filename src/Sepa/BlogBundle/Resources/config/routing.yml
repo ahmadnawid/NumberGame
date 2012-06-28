@@ -1,0 +1,16 @@
+SepaBlogBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: SepaBlogBundle:Default:index }
+    
+blog_list:
+    pattern:  /blog
+    defaults: { _controller: SepaBlogBundle:Blog:list, color: green }
+
+blog_show:
+    pattern:  /blog/show/{id}
+    defaults: { _controller: SepaBlogBundle:Blog:show }
+    
+post_crud:
+    resource: "@SepaBlogBundle/Controller/PostController.php"
+    type:     annotation
+
