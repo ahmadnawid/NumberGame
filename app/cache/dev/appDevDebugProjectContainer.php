@@ -248,7 +248,7 @@ class appDevDebugProjectContainer extends Container
         $b = new \Doctrine\Common\EventManager();
         $b->addEventSubscriber(new \Doctrine\DBAL\Event\Listeners\MysqlSessionInit('UTF8'));
 
-        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('dbname' => 'blog_db', 'host' => 'localhost', 'port' => '', 'user' => 'root', 'password' => 'neo2012', 'driver' => 'pdo_mysql', 'driverOptions' => array()), $a, $b, array());
+        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('dbname' => 'blog_db', 'host' => 'localhost', 'port' => '', 'password' => 'neo2012', 'driver' => 'pdo_mysql', 'user' => 'root', 'driverOptions' => array()), $a, $b, array());
     }
 
     /**
@@ -270,8 +270,8 @@ class appDevDebugProjectContainer extends Container
         $c = new \Doctrine\Common\Cache\ArrayCache();
         $c->setNamespace('sf2orm_default_0047f621009f024762da36ff5e364b57');
 
-        $d = new \Symfony\Bridge\Doctrine\Mapping\Driver\XmlDriver(array(0 => '/home/mustafazada/SymfonyBlog/src/Sepa/BlogBundle/Resources/config/doctrine'));
-        $d->setNamespacePrefixes(array('/home/mustafazada/SymfonyBlog/src/Sepa/BlogBundle/Resources/config/doctrine' => 'Sepa\\BlogBundle\\Entity'));
+        $d = new \Symfony\Bridge\Doctrine\Mapping\Driver\XmlDriver(array(0 => '/home/mustafazada/SymfonyBlog/src/Sepa/BlogBundle/Resources/config/doctrine', 1 => '/home/mustafazada/SymfonyBlog/src/Game/GuessNumberBundle/Resources/config/doctrine'));
+        $d->setNamespacePrefixes(array('/home/mustafazada/SymfonyBlog/src/Sepa/BlogBundle/Resources/config/doctrine' => 'Sepa\\BlogBundle\\Entity', '/home/mustafazada/SymfonyBlog/src/Game/GuessNumberBundle/Resources/config/doctrine' => 'Game\\GuessNumberBundle\\Entity'));
         $d->setGlobalBasename('mapping');
 
         $e = new \Symfony\Bridge\Doctrine\Mapping\Driver\YamlDriver(array(0 => '/home/mustafazada/SymfonyBlog/src/Acme/TaskBundle/Resources/config/doctrine'));
@@ -280,10 +280,11 @@ class appDevDebugProjectContainer extends Container
 
         $f = new \Doctrine\ORM\Mapping\Driver\DriverChain();
         $f->addDriver($d, 'Sepa\\BlogBundle\\Entity');
+        $f->addDriver($d, 'Game\\GuessNumberBundle\\Entity');
         $f->addDriver($e, 'Acme\\TaskBundle\\Entity');
 
         $g = new \Doctrine\ORM\Configuration();
-        $g->setEntityNamespaces(array('SepaBlogBundle' => 'Sepa\\BlogBundle\\Entity', 'AcmeTaskBundle' => 'Acme\\TaskBundle\\Entity'));
+        $g->setEntityNamespaces(array('SepaBlogBundle' => 'Sepa\\BlogBundle\\Entity', 'AcmeTaskBundle' => 'Acme\\TaskBundle\\Entity', 'GameGuessNumberBundle' => 'Game\\GuessNumberBundle\\Entity'));
         $g->setMetadataCacheImpl($a);
         $g->setQueryCacheImpl($b);
         $g->setResultCacheImpl($c);
@@ -1504,7 +1505,7 @@ class appDevDebugProjectContainer extends Container
         $instance->setPort(25);
         $instance->setEncryption(NULL);
         $instance->setUsername('');
-        $instance->setPassword('');
+        $instance->setPassword('neo\'@\'localhost');
         $instance->setAuthMode(NULL);
         $instance->registerPlugin($this->get('swiftmailer.plugin.messagelogger'));
 
@@ -2218,12 +2219,11 @@ class appDevDebugProjectContainer extends Container
             'database_host' => 'localhost',
             'database_port' => '',
             'database_name' => 'blog_db',
-            'database_user' => 'root',
             'database_password' => 'neo2012',
             'mailer_transport' => 'smtp',
             'mailer_host' => 'localhost',
             'mailer_user' => '',
-            'mailer_password' => '',
+            'mailer_password' => 'neo\'@\'localhost',
             'locale' => 'en',
             'secret' => '1a7fa5850859e317a3f43e85f30fa1149032379e',
             'router_listener.class' => 'Symfony\\Bundle\\FrameworkBundle\\EventListener\\RouterListener',
@@ -2462,7 +2462,7 @@ class appDevDebugProjectContainer extends Container
             'swiftmailer.transport.smtp.port' => 25,
             'swiftmailer.transport.smtp.host' => 'localhost',
             'swiftmailer.transport.smtp.username' => '',
-            'swiftmailer.transport.smtp.password' => '',
+            'swiftmailer.transport.smtp.password' => 'neo\'@\'localhost',
             'swiftmailer.transport.smtp.auth_mode' => NULL,
             'swiftmailer.spool.enabled' => false,
             'swiftmailer.sender_address' => NULL,

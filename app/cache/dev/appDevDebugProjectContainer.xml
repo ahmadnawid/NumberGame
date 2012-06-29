@@ -31,12 +31,11 @@
     <parameter key="database_host">localhost</parameter>
     <parameter key="database_port"></parameter>
     <parameter key="database_name">blog_db</parameter>
-    <parameter key="database_user">root</parameter>
     <parameter key="database_password">neo2012</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">localhost</parameter>
     <parameter key="mailer_user"></parameter>
-    <parameter key="mailer_password"></parameter>
+    <parameter key="mailer_password">neo'@'localhost</parameter>
     <parameter key="locale">en</parameter>
     <parameter key="secret">1a7fa5850859e317a3f43e85f30fa1149032379e</parameter>
     <parameter key="router_listener.class">Symfony\Bundle\FrameworkBundle\EventListener\RouterListener</parameter>
@@ -271,7 +270,7 @@
     <parameter key="swiftmailer.transport.smtp.port">25</parameter>
     <parameter key="swiftmailer.transport.smtp.host">localhost</parameter>
     <parameter key="swiftmailer.transport.smtp.username"></parameter>
-    <parameter key="swiftmailer.transport.smtp.password"></parameter>
+    <parameter key="swiftmailer.transport.smtp.password">neo'@'localhost</parameter>
     <parameter key="swiftmailer.transport.smtp.auth_mode">null</parameter>
     <parameter key="swiftmailer.spool.enabled">false</parameter>
     <parameter key="swiftmailer.sender_address">null</parameter>
@@ -1561,9 +1560,9 @@
         <argument key="dbname">blog_db</argument>
         <argument key="host">localhost</argument>
         <argument key="port"></argument>
-        <argument key="user">root</argument>
         <argument key="password">neo2012</argument>
         <argument key="driver">pdo_mysql</argument>
+        <argument key="user">root</argument>
         <argument key="driverOptions" type="collection"/>
       </argument>
       <argument type="service">
@@ -1611,6 +1610,7 @@
             <argument type="collection">
               <argument key="SepaBlogBundle">Sepa\BlogBundle\Entity</argument>
               <argument key="AcmeTaskBundle">Acme\TaskBundle\Entity</argument>
+              <argument key="GameGuessNumberBundle">Game\GuessNumberBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -1648,10 +1648,12 @@
                     <service class="Symfony\Bridge\Doctrine\Mapping\Driver\XmlDriver" public="false">
                       <argument type="collection">
                         <argument>/home/mustafazada/SymfonyBlog/src/Sepa/BlogBundle/Resources/config/doctrine</argument>
+                        <argument>/home/mustafazada/SymfonyBlog/src/Game/GuessNumberBundle/Resources/config/doctrine</argument>
                       </argument>
                       <call method="setNamespacePrefixes">
                         <argument type="collection">
                           <argument key="/home/mustafazada/SymfonyBlog/src/Sepa/BlogBundle/Resources/config/doctrine">Sepa\BlogBundle\Entity</argument>
+                          <argument key="/home/mustafazada/SymfonyBlog/src/Game/GuessNumberBundle/Resources/config/doctrine">Game\GuessNumberBundle\Entity</argument>
                         </argument>
                       </call>
                       <call method="setGlobalBasename">
@@ -1660,6 +1662,26 @@
                     </service>
                   </argument>
                   <argument>Sepa\BlogBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Symfony\Bridge\Doctrine\Mapping\Driver\XmlDriver" public="false">
+                      <argument type="collection">
+                        <argument>/home/mustafazada/SymfonyBlog/src/Sepa/BlogBundle/Resources/config/doctrine</argument>
+                        <argument>/home/mustafazada/SymfonyBlog/src/Game/GuessNumberBundle/Resources/config/doctrine</argument>
+                      </argument>
+                      <call method="setNamespacePrefixes">
+                        <argument type="collection">
+                          <argument key="/home/mustafazada/SymfonyBlog/src/Sepa/BlogBundle/Resources/config/doctrine">Sepa\BlogBundle\Entity</argument>
+                          <argument key="/home/mustafazada/SymfonyBlog/src/Game/GuessNumberBundle/Resources/config/doctrine">Game\GuessNumberBundle\Entity</argument>
+                        </argument>
+                      </call>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>Game\GuessNumberBundle\Entity</argument>
                 </call>
                 <call method="addDriver">
                   <argument type="service">
@@ -2928,7 +2950,7 @@
         <argument></argument>
       </call>
       <call method="setPassword">
-        <argument></argument>
+        <argument>neo'@'localhost</argument>
       </call>
       <call method="setAuthMode">
         <argument>null</argument>

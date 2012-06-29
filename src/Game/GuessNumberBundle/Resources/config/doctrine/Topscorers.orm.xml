@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Game\GuessNumberBundle\Entity\Topscorers" table="TopScorers">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="userid" type="integer" column="userID">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="username" type="string" column="userName" length="10"/>
+    <field name="highscore" type="integer" column="highScore"/>
+    <field name="datetime" type="datetime" column="dateTime"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>
