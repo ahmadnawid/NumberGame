@@ -1,8 +1,18 @@
- {# src/Game/GuessNumberBundle/Resources/views/main.html.twig #}
-
- 
- {% extends '::base.html.twig' %}
 
  {% block body %}
-     You choose number {{ number }}!
- {% endblock %}
+    
+
+ 
+<form action="{{ path('main', { "name": name } )}}" method="post" {{ form_enctype(form) }}>
+  Hello {{ name |nl2br }}!
+ Guess a number between 1-10  
+  
+ {{ form_widget(form) }}
+   	
+
+    <input type="submit" value="guess" />
+</form>
+
+ {% endblock %}	
+ 
+

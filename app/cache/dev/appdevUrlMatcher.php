@@ -84,6 +84,16 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // _assetic_dfb42ef
+        if ($pathinfo === '/css/dfb42ef.css') {
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'dfb42ef',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_dfb42ef',);
+        }
+
+        // _assetic_dfb42ef_0
+        if ($pathinfo === '/css/dfb42ef_part_1_login_1.css') {
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'dfb42ef',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_dfb42ef_0',);
+        }
+
         // _wdt
         if (preg_match('#^/_wdt/(?P<token>[^/]+?)$#s', $pathinfo, $matches)) {
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ProfilerController::toolbarAction',)), array('_route' => '_wdt'));
@@ -148,14 +158,14 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\DefaultController::indexAction',)), array('_route' => 'GameGuessNumberBundle_homepage'));
         }
 
-        // test
-        if (0 === strpos($pathinfo, '/number') && preg_match('#^/number/(?P<number>[^/]+?)$#s', $pathinfo, $matches)) {
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::indexAction',)), array('_route' => 'test'));
+        // login
+        if ($pathinfo === '/login') {
+            return array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::indexAction',  '_route' => 'login',);
         }
 
-        // form
-        if ($pathinfo === '/form') {
-            return array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::formAction',  '_route' => 'form',);
+        // main
+        if (0 === strpos($pathinfo, '/main') && preg_match('#^/main/(?P<name>[^/]+?)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::mainAction',)), array('_route' => 'main'));
         }
 
         // AcmeTaskBundle_homepage

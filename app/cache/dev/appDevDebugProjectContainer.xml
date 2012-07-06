@@ -30,7 +30,7 @@
     <parameter key="database_driver">pdo_mysql</parameter>
     <parameter key="database_host">localhost</parameter>
     <parameter key="database_port"></parameter>
-    <parameter key="database_name">blog_db</parameter>
+    <parameter key="database_name">game_db</parameter>
     <parameter key="database_password">neo2012</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">localhost</parameter>
@@ -1557,7 +1557,7 @@
     </service>
     <service id="doctrine.dbal.default_connection" class="stdClass" factory-method="createConnection" factory-service="doctrine.dbal.connection_factory">
       <argument type="collection">
-        <argument key="dbname">blog_db</argument>
+        <argument key="dbname">game_db</argument>
         <argument key="host">localhost</argument>
         <argument key="port"></argument>
         <argument key="password">neo2012</argument>

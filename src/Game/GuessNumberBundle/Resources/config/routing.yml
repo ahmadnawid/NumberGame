@@ -2,10 +2,10 @@ GameGuessNumberBundle_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: GameGuessNumberBundle:Default:index }
 
-test:
-    pattern:  /number/{number}
+login:
+    pattern:  /login
     defaults: { _controller: GameGuessNumberBundle:Main:index }
-
-form:
-    pattern:  /form
-    defaults: { _controller: GameGuessNumberBundle:Main:form }  
+    
+main:
+    pattern:  /main/{name}
+    defaults: { _controller: GameGuessNumberBundle:Main:main }

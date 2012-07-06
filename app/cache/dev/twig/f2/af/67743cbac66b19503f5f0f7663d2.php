@@ -7,30 +7,55 @@ class __TwigTemplate_f2af67743cbac66b19503f5f0f7663d2 extends Twig_Template
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("::base.html.twig");
+        $this->parent = false;
 
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
     }
 
-    protected function doGetParent(array $context)
-    {
-        return "::base.html.twig";
-    }
-
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        // line 1
+        echo "
+ ";
+        // line 2
+        $this->displayBlock('body', $context, $blocks);
+        // line 16
+        echo "\t
+ 
+
+";
     }
 
-    // line 6
+    // line 2
     public function block_body($context, array $blocks = array())
     {
+        // line 3
+        echo "    
+
+ 
+<form action=\"";
+        // line 6
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("main", array("name" => $this->getContext($context, "name"))), "html", null, true);
+        echo "\" method=\"post\" ";
+        echo $this->env->getExtension('form')->renderEnctype($this->getContext($context, "form"));
+        echo ">
+  Hello ";
         // line 7
-        echo "     You choose number ";
-        echo twig_escape_filter($this->env, $this->getContext($context, "number"), "html", null, true);
+        echo nl2br(twig_escape_filter($this->env, $this->getContext($context, "name"), "html", null, true));
         echo "!
+ Guess a number between 1-10  
+  
+ ";
+        // line 10
+        echo $this->env->getExtension('form')->renderWidget($this->getContext($context, "form"));
+        echo "
+   \t
+
+    <input type=\"submit\" value=\"guess\" />
+</form>
+
  ";
     }
 
@@ -39,13 +64,8 @@ class __TwigTemplate_f2af67743cbac66b19503f5f0f7663d2 extends Twig_Template
         return "GameGuessNumberBundle::main.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  29 => 7,  26 => 6,);
+        return array (  50 => 10,  44 => 7,  38 => 6,  33 => 3,  30 => 2,  23 => 16,  21 => 2,  18 => 1,);
     }
 }
