@@ -1,0 +1,78 @@
+input, textarea ,select{ 
+		display: inline-block;
+        padding: 5px;  
+        border: solid 1px #E495CA;  
+        outline: 0;  
+        font: normal 12px/100% Arial,Verdana, Tahoma,serif, sans-serif;  
+        width: 170px;  
+        background: #FFFFFF;
+        color:#000000;
+       
+}
+.f5 {
+	margin-top: -66px;
+	margin-left: 670px;
+	width: 100px;
+}
+.f6 {
+	margin-top: 40px;
+	margin-left: 670px;
+	width: 100px;
+}
+.f7 {
+	margin-top: 80px;
+	margin-left: 670px;
+	width: 100px;
+}
+
+.f2 {
+	margin-top: 60px;
+	margin-left: 120px;
+	width: 100px;
+}
+
+.f3 {
+	margin-top: 60px;
+	margin-left: -60px;
+	width: 100px;
+}
+.f1 label {
+	width: 10em;
+    margin-right: 2.5em;
+    text-align: left;
+    font-size: 14px;
+}
+
+
+.input{
+	 position: absolute;
+	 display:block;	
+   	 font-size: 15px;
+   	 font-style: bold;
+   	 margin-top: 17px;
+   	 width: 130px;
+   	 height: 30px;
+  	 border-top-right-radius: 10px;
+  	 border-bottom-right-radius: 10% 5%;
+  	 border-top-left-radius: 10px 5px;
+  	 border-bottom-left-radius: 10px 5px;
+  	 border-bottom-right-radius: 10px;
+     color: #FFFFFF;
+     background-color: #003366;
+     border-style: solid;
+     border-top-color: #333333;
+     border-left-color: #555555;
+     border-right-color: #BBBBBB;
+     border-bottom-color: #DDDDDD;
+     vertical-align: middle;
+}
+.help{
+	margin-top: -40px;
+font: normal 14px/100% Arial,Verdana, Tahoma,serif, sans-serif;
+margin-left: 250px; 
+
+}
+
+
+
+

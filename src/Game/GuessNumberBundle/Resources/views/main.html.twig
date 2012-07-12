@@ -1,18 +1,29 @@
 
- {% block body %}
-    
-
+{#}
+{% stylesheets
+    '@GameGuessNumberBundle/Resources/public/css/*'
+%}
+<link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}#}
  
-<form action="{{ path('main', { "name": name } )}}" method="post" {{ form_enctype(form) }}>
+<form action="{{ path('index', { "name": name })}}" method="post" {{ form_enctype(form) }} > 
   Hello {{ name |nl2br }}!
  Guess a number between 1-10  
-  
  {{ form_widget(form) }}
-   	
+   	  
 
     <input type="submit" value="guess" />
 </form>
 
- {% endblock %}	
- 
+
+
+
+
+
+
+
+
+
+
+<a href="{{ path('show', { "gtype": 1 } ) }}">1D List</a>
 

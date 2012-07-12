@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_42bEIcupEeGrl-MZwNarfw" name="database">
+  <elementImport xmi:id="_45owMMupEeGrl-MZwNarfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_45yhMMupEeGrl-MZwNarfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_45zIQMupEeGrl-MZwNarfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_45zIQcupEeGrl-MZwNarfw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_guovUMuqEeGrl-MZwNarfw" name="TopScorers">
+    <ownedAttribute xmi:id="_iCSIgMuqEeGrl-MZwNarfw" name="userID" aggregation="composite"/>
+    <ownedAttribute xmi:id="_ih9uIMuqEeGrl-MZwNarfw" name="userName" aggregation="composite"/>
+    <ownedAttribute xmi:id="_itGAEMuqEeGrl-MZwNarfw" name="highScore" aggregation="composite"/>
+    <ownedAttribute xmi:id="_i37XEMuqEeGrl-MZwNarfw" name="gameType" aggregation="composite"/>
+    <ownedAttribute xmi:id="_jCS0AMuqEeGrl-MZwNarfw" name="dateTime" aggregation="composite"/>
+  </packagedElement>
+</uml:Package>

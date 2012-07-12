@@ -4,8 +4,20 @@ GameGuessNumberBundle_homepage:
 
 login:
     pattern:  /login
+    defaults: { _controller: GameGuessNumberBundle:Main:login }
+    
+index:
+    pattern:  /index
     defaults: { _controller: GameGuessNumberBundle:Main:index }
     
-main:
-    pattern:  /main/{name}
-    defaults: { _controller: GameGuessNumberBundle:Main:main }
+save:
+    pattern:  /save/{name}/{score}/{type}
+    defaults: { _controller: GameGuessNumberBundle:Main:save}
+    
+show:
+    pattern:  /show/{gtype}
+    defaults: { _controller: GameGuessNumberBundle:Main:show}
+     
+help:
+    pattern:  /help
+    defaults: { _controller: GameGuessNumberBundle:Main:help}

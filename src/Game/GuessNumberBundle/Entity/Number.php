@@ -5,6 +5,8 @@ namespace Game\GuessNumberBundle\Entity;
 class Number
 {
 	protected $number;
+	protected $random;
+	
 
 	public function getNumber()
 	{
@@ -13,6 +15,14 @@ class Number
 	public function setNumber($number)
 	{
 		$this->task = $number;
+	}
+	public function getRandom()
+	{
+		return $this->random;
+	}
+	public function setRandom($random)
+	{
+		$this->task = $random;
 	}
 
 }
