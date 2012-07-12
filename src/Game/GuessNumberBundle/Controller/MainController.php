@@ -120,6 +120,7 @@ class MainController extends Controller
 				
 				$type = '1D';
 				$uguess = $obj->getYourGuess();
+				$obj->setScore($session->get('score'));
 				
 				
 				if($randum < $uguess && $uguess != 0){
