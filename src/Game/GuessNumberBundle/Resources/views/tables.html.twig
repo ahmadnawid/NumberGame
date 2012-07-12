@@ -1,7 +1,5 @@
 
- 
- 
- {% stylesheets
+{% stylesheets
     '@GameGuessNumberBundle/Resources/public/css/*'
 %}
 <link rel="stylesheet" href="{{ asset_url }}" />
@@ -23,11 +21,7 @@
     </thead>
     <tbody>
     
-   {% for entity in topscorer %}
-        
-   
-
-  
+ {% for entity in topscorer %}
         <tr>
             <td>{{ entity.username }}</a></td>
             <td>{{ entity.highscore }}</td>
@@ -36,7 +30,7 @@
             
             
         </tr>
-  {% endfor %}
+{% endfor %}
     </tbody>
 </table>
 			<br>

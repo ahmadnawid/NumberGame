@@ -274,27 +274,23 @@ class appDevDebugProjectContainer extends Container
         $d->setNamespacePrefixes(array('/home/mustafazada/SymfonyBlog/src/Sepa/BlogBundle/Resources/config/doctrine' => 'Sepa\\BlogBundle\\Entity', '/home/mustafazada/SymfonyBlog/src/Game/GuessNumberBundle/Resources/config/doctrine' => 'Game\\GuessNumberBundle\\Entity'));
         $d->setGlobalBasename('mapping');
 
-        $e = new \Symfony\Bridge\Doctrine\Mapping\Driver\YamlDriver(array(0 => '/home/mustafazada/SymfonyBlog/src/Acme/TaskBundle/Resources/config/doctrine'));
-        $e->setNamespacePrefixes(array('/home/mustafazada/SymfonyBlog/src/Acme/TaskBundle/Resources/config/doctrine' => 'Acme\\TaskBundle\\Entity'));
-        $e->setGlobalBasename('mapping');
+        $e = new \Doctrine\ORM\Mapping\Driver\DriverChain();
+        $e->addDriver($d, 'Sepa\\BlogBundle\\Entity');
+        $e->addDriver($d, 'Game\\GuessNumberBundle\\Entity');
+        $e->addDriver(new \Doctrine\ORM\Mapping\Driver\AnnotationDriver(new \Symfony\Bridge\Doctrine\Annotations\IndexedReader($this->get('annotation_reader')), array(0 => '/home/mustafazada/SymfonyBlog/src/Acme/TaskBundle/Entity')), 'Acme\\TaskBundle\\Entity');
 
-        $f = new \Doctrine\ORM\Mapping\Driver\DriverChain();
-        $f->addDriver($d, 'Sepa\\BlogBundle\\Entity');
-        $f->addDriver($d, 'Game\\GuessNumberBundle\\Entity');
-        $f->addDriver($e, 'Acme\\TaskBundle\\Entity');
+        $f = new \Doctrine\ORM\Configuration();
+        $f->setEntityNamespaces(array('SepaBlogBundle' => 'Sepa\\BlogBundle\\Entity', 'AcmeTaskBundle' => 'Acme\\TaskBundle\\Entity', 'GameGuessNumberBundle' => 'Game\\GuessNumberBundle\\Entity'));
+        $f->setMetadataCacheImpl($a);
+        $f->setQueryCacheImpl($b);
+        $f->setResultCacheImpl($c);
+        $f->setMetadataDriverImpl($e);
+        $f->setProxyDir('/home/mustafazada/SymfonyBlog/app/cache/dev/doctrine/orm/Proxies');
+        $f->setProxyNamespace('Proxies');
+        $f->setAutoGenerateProxyClasses(true);
+        $f->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
 
-        $g = new \Doctrine\ORM\Configuration();
-        $g->setEntityNamespaces(array('SepaBlogBundle' => 'Sepa\\BlogBundle\\Entity', 'AcmeTaskBundle' => 'Acme\\TaskBundle\\Entity', 'GameGuessNumberBundle' => 'Game\\GuessNumberBundle\\Entity'));
-        $g->setMetadataCacheImpl($a);
-        $g->setQueryCacheImpl($b);
-        $g->setResultCacheImpl($c);
-        $g->setMetadataDriverImpl($f);
-        $g->setProxyDir('/home/mustafazada/SymfonyBlog/app/cache/dev/doctrine/orm/Proxies');
-        $g->setProxyNamespace('Proxies');
-        $g->setAutoGenerateProxyClasses(true);
-        $g->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
-
-        return $this->services['doctrine.orm.default_entity_manager'] = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $g);
+        return $this->services['doctrine.orm.default_entity_manager'] = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $f);
     }
 
     /**

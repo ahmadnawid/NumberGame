@@ -10,7 +10,6 @@ class __TwigTemplate_f2af67743cbac66b19503f5f0f7663d2 extends Twig_Template
         $this->parent = false;
 
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
         );
     }
 
@@ -18,45 +17,45 @@ class __TwigTemplate_f2af67743cbac66b19503f5f0f7663d2 extends Twig_Template
     {
         // line 1
         echo "
- ";
-        // line 2
-        $this->displayBlock('body', $context, $blocks);
-        // line 16
-        echo "\t
- 
-
 ";
-    }
-
-    // line 2
-    public function block_body($context, array $blocks = array())
-    {
-        // line 3
-        echo "    
-
- 
+        // line 8
+        echo " 
 <form action=\"";
-        // line 6
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("main", array("name" => $this->getContext($context, "name"))), "html", null, true);
+        // line 9
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("index", array("name" => $this->getContext($context, "name"))), "html", null, true);
         echo "\" method=\"post\" ";
         echo $this->env->getExtension('form')->renderEnctype($this->getContext($context, "form"));
-        echo ">
+        echo " > 
   Hello ";
-        // line 7
+        // line 10
         echo nl2br(twig_escape_filter($this->env, $this->getContext($context, "name"), "html", null, true));
         echo "!
  Guess a number between 1-10  
-  
  ";
-        // line 10
+        // line 12
         echo $this->env->getExtension('form')->renderWidget($this->getContext($context, "form"));
         echo "
-   \t
+   \t  
 
     <input type=\"submit\" value=\"guess\" />
 </form>
 
- ";
+
+
+
+
+
+
+
+
+
+
+<a href=\"";
+        // line 28
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("show", array("gtype" => 1)), "html", null, true);
+        echo "\">1D List</a>
+
+";
     }
 
     public function getTemplateName()
@@ -64,8 +63,13 @@ class __TwigTemplate_f2af67743cbac66b19503f5f0f7663d2 extends Twig_Template
         return "GameGuessNumberBundle::main.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  50 => 10,  44 => 7,  38 => 6,  33 => 3,  30 => 2,  23 => 16,  21 => 2,  18 => 1,);
+        return array (  53 => 28,  34 => 12,  29 => 10,  23 => 9,  20 => 8,  17 => 1,);
     }
 }
