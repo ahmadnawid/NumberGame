@@ -9,5 +9,4 @@
   5- The main controller has one test function and the routing is already configured for it.
   6- The database script is in database folder.
   7- Add the vendors folder into your project folder for more libraries.
-  
 **Please before you push anything to the repository read the documentation about "How to Create and store a Symfony2 Project in git".**
