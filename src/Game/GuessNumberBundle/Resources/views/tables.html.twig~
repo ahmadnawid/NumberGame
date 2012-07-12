@@ -1,0 +1,53 @@
+
+ 
+ 
+ {% stylesheets
+    '@GameGuessNumberBundle/Resources/public/css/*'
+%}
+<link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+
+
+<div id="body">
+	<div id="leftnav">
+		<div class="text">
+
+			<table class="records_list">
+    <thead>
+        <tr>
+            <th>UserName</th>
+            <th>Score</th>
+            <th>GameLevel</th>
+             <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+   {% for entity in topscorer %}
+        
+   
+
+  
+        <tr>
+            <td>{{ entity.username }}</a></td>
+            <td>{{ entity.highscore }}</td>
+            <td>{{ entity.gametype }}</td>
+           <td>{% if entity.datetime %}{{ entity.datetime|date('Y-m-d H:i:s') }}{% endif %}</td>
+            
+            
+        </tr>
+  {% endfor %}
+    </tbody>
+</table>
+			<br>
+		<a href="{{ url('index') }}">Back</a>
+			
+		</div>	
+	</div>
+</div>
+
+
+
+
+
+

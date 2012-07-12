@@ -23,8 +23,14 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        '_demo' => true,
        '_demo_hello' => true,
        '_demo_contact' => true,
+       '_assetic_8f3ebe8' => true,
+       '_assetic_8f3ebe8_0' => true,
+       '_assetic_8f3ebe8_1' => true,
+       '_assetic_8f3ebe8_2' => true,
        '_assetic_dfb42ef' => true,
        '_assetic_dfb42ef_0' => true,
+       '_assetic_dfb42ef_1' => true,
+       '_assetic_dfb42ef_2' => true,
        '_wdt' => true,
        '_profiler_search' => true,
        '_profiler_purge' => true,
@@ -37,7 +43,10 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        '_configurator_final' => true,
        'GameGuessNumberBundle_homepage' => true,
        'login' => true,
-       'main' => true,
+       'index' => true,
+       'save' => true,
+       'show' => true,
+       'help' => true,
        'AcmeTaskBundle_homepage' => true,
        'task_new' => true,
        'SepaBlogBundle_homepage' => true,
@@ -123,6 +132,26 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         return array(array (), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\DemoController::contactAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/demo/contact',  ),));
     }
 
+    private function get_assetic_8f3ebe8RouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => '8f3ebe8',  'pos' => NULL,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/8f3ebe8.css',  ),));
+    }
+
+    private function get_assetic_8f3ebe8_0RouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => '8f3ebe8',  'pos' => 0,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/8f3ebe8_part_1_body_1.css',  ),));
+    }
+
+    private function get_assetic_8f3ebe8_1RouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => '8f3ebe8',  'pos' => 1,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/8f3ebe8_part_1_formStyle_2.css',  ),));
+    }
+
+    private function get_assetic_8f3ebe8_2RouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => '8f3ebe8',  'pos' => 2,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/8f3ebe8_part_1_style_3.css',  ),));
+    }
+
     private function get_assetic_dfb42efRouteInfo()
     {
         return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'dfb42ef',  'pos' => NULL,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/dfb42ef.css',  ),));
@@ -130,7 +159,17 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
 
     private function get_assetic_dfb42ef_0RouteInfo()
     {
-        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'dfb42ef',  'pos' => 0,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/dfb42ef_part_1_login_1.css',  ),));
+        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'dfb42ef',  'pos' => 0,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/dfb42ef_part_1_body_1.css',  ),));
+    }
+
+    private function get_assetic_dfb42ef_1RouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'dfb42ef',  'pos' => 1,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/dfb42ef_part_1_formStyle_2.css',  ),));
+    }
+
+    private function get_assetic_dfb42ef_2RouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'assetic.controller:render',  'name' => 'dfb42ef',  'pos' => 2,  '_format' => 'css',), array (), array (  0 =>   array (    0 => 'text',    1 => '/css/dfb42ef_part_1_style_3.css',  ),));
     }
 
     private function get_wdtRouteInfo()
@@ -190,12 +229,27 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
 
     private function getloginRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/login',  ),));
+        return array(array (), array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::loginAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/login',  ),));
     }
 
-    private function getmainRouteInfo()
+    private function getindexRouteInfo()
     {
-        return array(array (  0 => 'name',), array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::mainAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'name',  ),  1 =>   array (    0 => 'text',    1 => '/main',  ),));
+        return array(array (), array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/index',  ),));
+    }
+
+    private function getsaveRouteInfo()
+    {
+        return array(array (  0 => 'name',  1 => 'score',  2 => 'type',), array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::saveAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'type',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'score',  ),  2 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'name',  ),  3 =>   array (    0 => 'text',    1 => '/save',  ),));
+    }
+
+    private function getshowRouteInfo()
+    {
+        return array(array (  0 => 'gtype',), array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::showAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'gtype',  ),  1 =>   array (    0 => 'text',    1 => '/show',  ),));
+    }
+
+    private function gethelpRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::helpAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/help',  ),));
     }
 
     private function getAcmeTaskBundle_homepageRouteInfo()

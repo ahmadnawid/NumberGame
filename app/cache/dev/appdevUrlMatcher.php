@@ -84,14 +84,44 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // _assetic_8f3ebe8
+        if ($pathinfo === '/css/8f3ebe8.css') {
+            return array (  '_controller' => 'assetic.controller:render',  'name' => '8f3ebe8',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_8f3ebe8',);
+        }
+
+        // _assetic_8f3ebe8_0
+        if ($pathinfo === '/css/8f3ebe8_part_1_body_1.css') {
+            return array (  '_controller' => 'assetic.controller:render',  'name' => '8f3ebe8',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_8f3ebe8_0',);
+        }
+
+        // _assetic_8f3ebe8_1
+        if ($pathinfo === '/css/8f3ebe8_part_1_formStyle_2.css') {
+            return array (  '_controller' => 'assetic.controller:render',  'name' => '8f3ebe8',  'pos' => 1,  '_format' => 'css',  '_route' => '_assetic_8f3ebe8_1',);
+        }
+
+        // _assetic_8f3ebe8_2
+        if ($pathinfo === '/css/8f3ebe8_part_1_style_3.css') {
+            return array (  '_controller' => 'assetic.controller:render',  'name' => '8f3ebe8',  'pos' => 2,  '_format' => 'css',  '_route' => '_assetic_8f3ebe8_2',);
+        }
+
         // _assetic_dfb42ef
         if ($pathinfo === '/css/dfb42ef.css') {
             return array (  '_controller' => 'assetic.controller:render',  'name' => 'dfb42ef',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_dfb42ef',);
         }
 
         // _assetic_dfb42ef_0
-        if ($pathinfo === '/css/dfb42ef_part_1_login_1.css') {
+        if ($pathinfo === '/css/dfb42ef_part_1_body_1.css') {
             return array (  '_controller' => 'assetic.controller:render',  'name' => 'dfb42ef',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_dfb42ef_0',);
+        }
+
+        // _assetic_dfb42ef_1
+        if ($pathinfo === '/css/dfb42ef_part_1_formStyle_2.css') {
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'dfb42ef',  'pos' => 1,  '_format' => 'css',  '_route' => '_assetic_dfb42ef_1',);
+        }
+
+        // _assetic_dfb42ef_2
+        if ($pathinfo === '/css/dfb42ef_part_1_style_3.css') {
+            return array (  '_controller' => 'assetic.controller:render',  'name' => 'dfb42ef',  'pos' => 2,  '_format' => 'css',  '_route' => '_assetic_dfb42ef_2',);
         }
 
         // _wdt
@@ -160,12 +190,27 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         // login
         if ($pathinfo === '/login') {
-            return array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::indexAction',  '_route' => 'login',);
+            return array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::loginAction',  '_route' => 'login',);
         }
 
-        // main
-        if (0 === strpos($pathinfo, '/main') && preg_match('#^/main/(?P<name>[^/]+?)$#s', $pathinfo, $matches)) {
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::mainAction',)), array('_route' => 'main'));
+        // index
+        if ($pathinfo === '/index') {
+            return array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::indexAction',  '_route' => 'index',);
+        }
+
+        // save
+        if (0 === strpos($pathinfo, '/save') && preg_match('#^/save/(?P<name>[^/]+?)/(?P<score>[^/]+?)/(?P<type>[^/]+?)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::saveAction',)), array('_route' => 'save'));
+        }
+
+        // show
+        if (0 === strpos($pathinfo, '/show') && preg_match('#^/show/(?P<gtype>[^/]+?)$#s', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::showAction',)), array('_route' => 'show'));
+        }
+
+        // help
+        if ($pathinfo === '/help') {
+            return array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::helpAction',  '_route' => 'help',);
         }
 
         // AcmeTaskBundle_homepage
