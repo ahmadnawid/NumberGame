@@ -2,7 +2,7 @@ The initial bundle for the game project is online.
 
 Please use the following instructions to work on the project:
   
-  1- Clone the project
+ > 1- Clone the project
   2- Edit the file parameters.ini.dist or create parameters.ini and configure your database info.
   3- The project bundle is Game/GuessNumberBundle bundle. Please work in this bundle.
   4- Initially the project has a main controller and main.html.twig view files.
