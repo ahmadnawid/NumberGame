@@ -168,7 +168,6 @@ class MainController extends Controller
 						$urguess = "$randum1,$randum2";
 						$uguess = array('fg'=> $obj->getFirstGuess(), 'sg'=>$obj->getSecondGuess());
 				
-						echo $randum1.",".$randum2;
 						
 						if($randum1 == $uguess['fg'] && $randum2 == $uguess['sg'] && $uguess != 0){
 							$this->rando();
@@ -296,8 +295,6 @@ class MainController extends Controller
 						$urguess = "$randum,$randum1,$randum2";
 						$arr = array('fg'=> $obj->getFirstGuess(), 'sg'=>$obj->getSecondGuess(), 'tg'=>$obj->getThirdGuess());
 				 
-						echo $randum.','.$randum1.','.$randum2;
-
 						if($randum == $arr['fg'] && $randum1 == $arr['sg'] && $randum2 == $arr['tg'] && $arr != 0){
 				
 									$this->rando();
@@ -517,9 +514,11 @@ class MainController extends Controller
 		$b = rand(1,100);
 		$c = rand(1,100);
 		
+		
 		$session->set('rand', $a);
 		$session->set('rand1', $b);
 		$session->set('rand2', $c);
+		
 		$session->set('score', 100);
 		$session->set('numofguess', 0);
 		$session->set('count', 0);
