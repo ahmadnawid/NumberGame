@@ -311,7 +311,7 @@ class MainController extends Controller
 									$session->set('numofguess', $numofguess +1);
 					
 									$sum = ($randum + 20) * 13;
-									$obj->setGuessNumber('X + 20 * 13 = '.$sum);
+									$obj->setGuessNumber('(X + 20) * 13 = '.$sum);
 					
 					
 									if($randum > $randum1 && $randum1 > $randum2)
