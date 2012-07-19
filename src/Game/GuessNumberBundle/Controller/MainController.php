@@ -524,9 +524,9 @@ class MainController extends Controller
 		
 		$session = $this->getRequest()->getSession();
 		
-		$a = rand(1,100);
+		$a = rand(1,20);
 		$b = rand(1,100);
-		$c = rand(1,20);
+		$c = rand(1,100);
 		
 		$session->set('rand', $a);
 		$session->set('rand1', $b);
