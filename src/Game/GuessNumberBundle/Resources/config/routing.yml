@@ -5,7 +5,7 @@ GameGuessNumberBundle_homepage:
 login:
     pattern:  /login
     defaults: { _controller: GameGuessNumberBundle:Main:login }
-    
+        
 index:
     pattern:  /index
     defaults: { _controller: GameGuessNumberBundle:Main:index }
@@ -21,3 +21,7 @@ show:
 help:
     pattern:  /help
     defaults: { _controller: GameGuessNumberBundle:Main:help}
+    
+logout:
+    pattern:  /logout
+    defaults: { _controller: GameGuessNumberBundle:Main:logOut}

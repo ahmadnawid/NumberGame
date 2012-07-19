@@ -81,6 +81,12 @@ class MainController extends Controller
 	
 	public function indexAction(Request $request)
 	{
+		
+		$session = $this->getRequest()->getSession();
+		
+		//check if user name set.
+		if($session->get('user')){
+		
 		$obj = new Game();
 		
 		$session = $this->getRequest()->getSession();
@@ -110,7 +116,14 @@ class MainController extends Controller
 		->add('score','text', array('read_only' => true))
 		->getForm();
 		
+		}	
+
+		else{
+			$session = $this->getRequest()->getSession();
+			$this->get('session')->setFlash('request', 'Please give a username to login!');
+			return $this->redirect($this->generateUrl('login'));
 				
+		}
 	
 		if($this->getRequest()->getMethod()=='POST'){
 			$form->bindRequest($request);
@@ -513,7 +526,7 @@ class MainController extends Controller
 		
 		$a = rand(1,100);
 		$b = rand(1,100);
-		$c = rand(1,100);
+		$c = rand(1,20);
 		
 		$session->set('rand', $a);
 		$session->set('rand1', $b);
@@ -526,6 +539,12 @@ class MainController extends Controller
 	public function helpAction(){
 		return $this->render('GameGuessNumberBundle::help.html.php');
 	
+	}
+	
+	public function logOutAction() {
+		$session = $this->getRequest()->getSession();
+		$session->clear();
+		return $this->redirect($this->generateUrl('login'));
 	}
 
 }

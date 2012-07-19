@@ -47,6 +47,7 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'save' => true,
        'show' => true,
        'help' => true,
+       'logout' => true,
        'AcmeTaskBundle_homepage' => true,
        'task_new' => true,
        'SepaBlogBundle_homepage' => true,
@@ -250,6 +251,11 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function gethelpRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::helpAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/help',  ),));
+    }
+
+    private function getlogoutRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::logOutAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/logout',  ),));
     }
 
     private function getAcmeTaskBundle_homepageRouteInfo()

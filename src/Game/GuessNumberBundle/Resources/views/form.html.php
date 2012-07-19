@@ -15,9 +15,13 @@
 			<?php echo $view['form']->widget($form) ?>
 			<input class="input" type="submit" name="login" value="Login"> <br><br>
 			
-	</form>
+	</form><br><br>
 
-
+<?php if ($view['session']->hasFlash('request')): ?>
+    <div class="text">
+        <?php echo $view['session']->getFlash('request') ?>
+    </div>
+<?php endif; ?>
  
 </div>
 </div>

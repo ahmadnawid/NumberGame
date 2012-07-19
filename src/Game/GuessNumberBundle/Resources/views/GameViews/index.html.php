@@ -23,8 +23,8 @@
 			
 			</form><br>
 	
-			<form action="<?php echo $view['router']->generate('login') ?>">
-			<input class="input" type="submit" name="logindiff" value="Change User">
+			<form action="<?php echo $view['router']->generate('logout') ?>">
+			<input class="input" type="submit" name="logindiff" value="Logout">
 			</form><br><br><br><br>
 	
 			<form action="<?php echo $view['router']->generate('show', array('gtype' => '1D'), true) ?>">

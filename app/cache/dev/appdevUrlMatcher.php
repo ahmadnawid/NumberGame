@@ -213,6 +213,11 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::helpAction',  '_route' => 'help',);
         }
 
+        // logout
+        if ($pathinfo === '/logout') {
+            return array (  '_controller' => 'Game\\GuessNumberBundle\\Controller\\MainController::logOutAction',  '_route' => 'logout',);
+        }
+
         // AcmeTaskBundle_homepage
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]+?)$#s', $pathinfo, $matches)) {
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Acme\\TaskBundle\\Controller\\DefaultController::indexAction',)), array('_route' => 'AcmeTaskBundle_homepage'));
