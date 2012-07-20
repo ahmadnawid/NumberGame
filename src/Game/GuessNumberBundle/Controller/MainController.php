@@ -504,7 +504,7 @@ class MainController extends Controller
 						'data'=>$obj->getType(),
 				)
 				)
-				->add('first_guess', 'text', array('label' => '1. Guess:1-100'))
+				->add('first_guess', 'text', array('label' => '1. Guess:1-20'))
 				->add('second_guess', 'text', array('label' => '2. Guess:1-100'))
 				->add('third_guess', 'text', array('label' => '3. Guess:1-100'))
 				->add('guess_number', 'text',array('read_only' => true, 'label' => 'Hint'))
